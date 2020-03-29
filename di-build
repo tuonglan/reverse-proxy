@@ -1,0 +1,7 @@
+#! /bin/sh
+
+VERSION=$(cat VERSION)
+NAME=reverse_proxy
+
+docker build -f Dockerfile --build-arg CERTBOT_VERSION="$(cat CERTBOT_VERSION)" \
+	-t tuonglan/$NAME:$VERSION .
